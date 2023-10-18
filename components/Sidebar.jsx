@@ -21,13 +21,13 @@ function Sidebar({children}) {
                     </div>
                     <span className="boarder-b-[1px] border-gray-200 w-full p-2"></span>
                 </Link>
-                <Link href='/'>
+                <Link href='/Customers'>
                     <div className='bg-gray-100 p-3 hover:bg-gray-200 cursor-pointer my-4  rounded-lg inline-block'>
                         <RxPerson size={20}/>
                     </div>
                     <span className="boarder-b-[1px] border-gray-200 w-full p-2"></span>
                 </Link>
-                <Link href='/'>
+                <Link href='/Orders'>
                     <div className='bg-gray-100 p-3 hover:bg-gray-200 cursor-pointer my-4  rounded-lg inline-block'>
                         <HiOutlineShoppingCart size={20}/>
                     </div>
