@@ -1,9 +1,16 @@
 import React from 'react'
 import {BsPersonFill,BsThreeDotsVertical} from 'react-icons/bs'
 import { data } from '@/data/Data'
+import {motion} from 'framer-motion'
+import { fadeIn } from '@/Variants'
 function Customers() {
   return (
-    <div className='bg-gray-100 min-h-screen'>
+    <motion.div 
+    variants={fadeIn('right',0.3)}
+    initial='hidden'
+    whileInView={'show'}
+    viewport={{ once: false, amount: 0.7}}
+    className='bg-gray-100 min-h-screen'>
         <div className='flex justify-between p-4'>
             <h2>customers</h2>
             <h2>welcome back,kim</h2>
@@ -36,7 +43,7 @@ function Customers() {
           </ul>
         </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

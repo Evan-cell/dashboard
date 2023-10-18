@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import { Bar } from 'react-chartjs-2';
+import {motion} from 'framer-motion'
+import { fadeIn } from '@/Variants'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -30,7 +32,7 @@ function Barchat() {
             labels: ['mon','tue','wen','thurs','fri','sat','sun'],
             datasets: [
                 {
-                    label: 'sales $',
+                    label: 'sales ksh',
                     data: [18127,22201,19490,19938,24182,17842,22475],
                     borderColor: 'rgb(53,162,235)',
                     backgroundColor: 'rgb(53,162,235,0.4)'
@@ -53,9 +55,14 @@ function Barchat() {
     })
   return (
     <>
-    <div className='w-full md:col-span-2 relative lg:h-[70vh] h-[50vh] m-auto p-4 rounded-lg bg-white'>
+    <motion.div 
+            variants={fadeIn('down',0.3)}
+            initial='hidden'
+            whileInView={'show'}
+            viewport={{ once: false, amount: 0.7}}
+    className='w-full md:col-span-2 relative lg:h-[70vh] h-[50vh] m-auto p-4 rounded-lg bg-white'>
         <Bar data={chartData} options={chartOptions} />
-    </div>
+    </motion.div>
     </>
   )
 }

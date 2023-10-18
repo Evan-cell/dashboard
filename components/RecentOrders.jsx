@@ -1,9 +1,16 @@
 import React from 'react'
 import { data } from '@/data/Data'
 import {FaShoppingBag} from 'react-icons/fa'
+import {motion} from 'framer-motion'
+import { fadeIn } from '@/Variants'
 function RecentOrders() {
   return (
-    <div className='w-full col-span-1 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-scroll'>
+    <motion.div 
+    variants={fadeIn('left',0.3)}
+    initial='hidden'
+    whileInView={'show'}
+    viewport={{ once: false, amount: 0.7}}
+    className='w-full col-span-1 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-scroll'>
         <h1>RecentOrders</h1>
         <ul>
             {data.map((order, id)=>(
@@ -19,7 +26,7 @@ function RecentOrders() {
                 </li>
             ))}
         </ul>
-    </div>
+    </motion.div>
   )
 }
 
